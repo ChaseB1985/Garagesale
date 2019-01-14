@@ -8,8 +8,6 @@ passport.use(new GoogleStrategy());
 //creates a new instance of google strat 
 
 
-//client id:
-//secret:
 const PORT = process.env.PORT || 5000;
 //for heroku to pass runtime config or assign to default port 
 
