@@ -9,9 +9,11 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2> hi there</h2>
+          
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
+          <a href="/auth/google">Sign in with google</a>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -19,6 +21,7 @@ class App extends Component {
             rel="noopener noreferrer"
           >
             Learn React
+            
           </a>
         </header>
       </div>
