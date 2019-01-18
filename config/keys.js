@@ -5,3 +5,9 @@ module.exports = {
     cookiekey: 'hasdhfklgkk'
 }
 //auth code: 4/0wDKPDD3uQkqVagY-20ab8GSxfYRMGm7q_ZdBD0uPoPPjCKrugeWoGnYuSrKAapPhKUi9qd1NqmTiIdAzcAywI8
+
+// "_id": {
+//     "$oid": "5c3f8ee265e96a4880a3aa12"
+// },
+// "googleId": "100445875763710177281",
+// "__v": 0
