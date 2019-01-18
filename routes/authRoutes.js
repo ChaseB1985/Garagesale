@@ -1,22 +1,28 @@
 const passport = require('passport');
 
-module.exports = (app) => {
+module.exports = app => {
+    //removed() around app
 app.get('/auth/google', 
     passport.authenticate('google', {
         scope: ['profile', 'email']
         //options obj, what kind of access user has(prof and email)
         })
 );
-app.get('/auth/google/callback', 
-    passport.authenticate('google'));
+app.get(
+    '/auth/google/callback', 
+    passport.authenticate('google'),
+    (req, res) => {
+        res.redirect('/surveys');
+        }
+    );
 
 app.get('/api/logout', (req, res) => {
     req.logout(); 
-    res.send(req.user); 
+    res.redirect('/'); 
     //shows user is logged out
 });
 
-app.get('/api/current_user', (req, res) =>{
+app.get('/api/current_user', (req, res) => {
     res.send(req.user);
     }); 
 };
