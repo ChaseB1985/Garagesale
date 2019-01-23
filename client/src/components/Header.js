@@ -8,7 +8,12 @@ class Header extends Component {
             case null:
                 return;
             case false:
-                return <li><a href="/auth/google">Login with Google</a></li>;
+                return [
+                    <li><a href="/auth/google">Login with Google</a></li>,
+                    <li><a href="/login"> User Name and Password</a></li>,
+                    <li><a href="/surveys"> Just Visiting</a></li>
+                ];
+
             default:
                 return [
                     <li><Payments /></li>,

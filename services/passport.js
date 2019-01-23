@@ -1,5 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const LocalStrategy = require('passport-local').Strategy; 
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
 
@@ -27,7 +28,10 @@ passport.use(
     async (accessToken, refreshToken, profile, done) => {
         const existingUser = await User.findOne(
             { googleId: profile.id });
-
+            console.log(profile.id);
+            console.log(profile);
+            console.log(googleId);
+            
             if (existingUser){
                 return done(null, existingUser);
             } 
@@ -36,5 +40,13 @@ passport.use(
         }
     )  
 );
-
-//creates a new instance of google strat 
+passport.use(new LocalStrategy(
+    function(username, password, done) {
+      User.findOne({ username: username }, function (err, user) {
+        if (err) { return done(err); }
+        if (!user) { return done(null, false); }
+        if (!user.verifyPassword(password)) { return done(null, false); }
+        return done(null, user);
+      });
+    }
+  ));

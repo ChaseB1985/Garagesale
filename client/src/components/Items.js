@@ -4,9 +4,9 @@ const Landing = () => {
     return (
         <div style={{ textAlign: 'center'}}>
             <h1>
-            Garage Sale!
+            Garge Sale!
             </h1>
-            Collect feedback from your users
+            <h2>Search for Items to buy.</h2>
         </div>
     );
 };
