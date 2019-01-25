@@ -1,8 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import Payments from './Payments';
+import axios from 'axios';
 class Header extends Component {
+    constructor(){
+        super()
+        this.logout = this.logout.bind(this)
+    }
+    logout(event) {
+        event.preventDefault()
+        console.log('logging out')
+        axios.post('/user/logout').then(response => {
+            console.log(response.data)
+            if (response.status === 200) {
+              this.props.updateUser({
+                loggedIn: false,
+                username: null
+              })
+            }
+          }).catch(error => {
+              console.log('Logout error')
+          })
+    }
+
     renderContent(){
         switch(this.props.auth){
             case null:
@@ -11,7 +33,9 @@ class Header extends Component {
                 return [
                     <li><a href="/auth/google">Login with Google</a></li>,
                     <li><a href="/login"> User Name and Password</a></li>,
-                    <li><a href="/surveys"> Just Visiting</a></li>
+                    <li><a href="/surveys"> Just Visiting</a></li>,
+                    <li><a href="/" onClick={this.logout}> logout </a></li>
+                    //<Link to="/" className="btn" onClick={this.logout}></Link>
                 ];
 
             default:

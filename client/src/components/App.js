@@ -27,7 +27,9 @@ class App extends Component {
                 <Route exact path="/" component={Landing} />
                 <Route exact path="/surveys" component={Dashboard} />
                 <Route path="/surveys/new" component={SurveyNew} />
-                
+                <Route path= "/login" render={() =><LoginForm updateUser={this.updateUser}/>}
+                />
+                <Route path= "/signup" render={() => <SignupForm/>}/>
                 </div>
             </BrowserRouter>
             </div>
