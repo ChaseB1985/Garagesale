@@ -30,7 +30,8 @@ class LoginForm extends Component {
 		// 	redirectTo: '/'
 		// })
         axios
-            .post('/user/login', {
+            //.post('/user/login', {
+            .post('/login', {
                 username: this.state.username,
                 password: this.state.password
             })

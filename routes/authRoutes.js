@@ -26,7 +26,9 @@ app.get('/api/current_user', (req, res) => {
     res.send(req.user);
     }); 
 };
-
+// app.get('/user/login', (req, res) =>{
+//     res.send(req.user);
+// });
 // app.post('/login', 
 //   passport.authenticate('local', { failureRedirect: '/login' }),
 //   function(req, res) {

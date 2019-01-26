@@ -31,7 +31,7 @@ passport.use(
             { googleId: profile.id });
             console.log(profile.id);
             console.log(profile);
-            console.log(googleId);
+            //console.log(googleId);
             
             if (existingUser){
                 return done(null, existingUser);
