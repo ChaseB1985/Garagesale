@@ -9,7 +9,9 @@ require('./models/Survey');
 require('./services/passport');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI, () => {
+    console.log('connected to DB')
+});
 
 const app = express(); 
 

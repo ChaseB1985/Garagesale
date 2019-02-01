@@ -1,7 +1,7 @@
 const passport = require('passport');
 
 module.exports = app => {
-    //removed() around app
+    
 app.get('/auth/google', 
     passport.authenticate('google', {
         scope: ['profile', 'email']
@@ -25,6 +25,9 @@ app.get('/api/logout', (req, res) => {
 app.get('/api/current_user', (req, res) => {
     res.send(req.user);
     }); 
+// app.get('/google/redirect', (req, res) =>{
+//         res.send('you reached the callback uri');
+//     });
 };
 // app.get('/user/login', (req, res) =>{
 //     res.send(req.user);
