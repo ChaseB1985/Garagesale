@@ -95,8 +95,8 @@ function ComponentProperty(props) {
           </Route>
           <div className={classes.lists}>
             <List component="nav">
-              <ListItemLink to="/inbox" primary="Inbox" icon={<InboxIcon />} />
-              <ListItemLink to="/drafts" primary="Drafts" icon={<DraftsIcon />} />
+              <ListItemLink to="/" primary="Inbox" icon={<InboxIcon />} />
+              <ListItemLink to="/survey/new" primary="Drafts" icon={<DraftsIcon />} />
             </List>
             <Divider />
             <List component="nav">
