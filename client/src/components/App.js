@@ -183,7 +183,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
-import Header from './Header';
+import Header from './Header/Header';
 import Landing from './Landing/Landing';
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
