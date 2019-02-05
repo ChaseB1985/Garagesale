@@ -1,11 +1,13 @@
 const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
+//const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const LocalStrategy = require('passport-local').Strategy; 
+const GithubStrategy = require('passport-github2').Strategy;
+const GoogleStrategy = require('passport-google-oauth2').Strategy;
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
 
-const User = mongoose.model('users');
-//const User = require('../models/User');
+// const User = mongoose.model('users');
+// //const User = require('../models/User');
 
 passport.serializeUser((user, done) => {
     done(null, user.id);
@@ -18,40 +20,75 @@ passport.deserializeUser((id, done) => {
     });
 });
 
-passport.use(
-    new GoogleStrategy(
-    {
-    clientID: keys.googleClientID, 
-    clientSecret: keys.googleClientSecret,
-    callbackURL: '/auth/google/callback',
-    //callbackURL: 'http://localhost:3000/auth/google/callback',
-    proxy: true,
-    passReqToCallback   : true
-    }, 
-    async (accessToken, refreshToken, profile, done) => {
-        const existingUser = await User.findOne(
-            { googleId: profile.id });
-            //console.log(profile.id);
-            //console.log(profile);
-            //console.log(googleId);
-            //console.log("profile fired");
+// passport.use(
+//     new GoogleStrategy(
+//     {
+//     clientID: keys.googleClientID, 
+//     clientSecret: keys.googleClientSecret,
+//     callbackURL: '/auth/google/callback',
+//     //callbackURL: 'http://localhost:3000/auth/google/callback',
+//     proxy: true,
+//     passReqToCallback   : true
+//     }, 
+//     async (accessToken, refreshToken, profile, done) => {
+//         const existingUser = await User.findOne(
+//             { googleId: profile.id });
             
-            if (existingUser){
-                return done(null, existingUser);
-            } 
-                const user = await new User({ googleId: profile.id }).save();
-                done(null, user);               
+//             //console.log("profile fired");
+            
+//             if (existingUser){
+//                 return done(null, existingUser);
+//             } 
+//                 const user = await new User({ googleId: profile.id }).save();
+//                 done(null, user);               
+//         }
+//     )  
+// );
+passport.use(new GoogleStrategy({
+//     clientID: config.google.clientID,
+//     clientSecret: config.google.clientSecret,
+//     callbackURL: config.google.callbackURL,
+         clientID: keys.googleClientID, 
+         clientSecret: keys.googleClientSecret,
+         //callbackURL: '/auth/google/callback',
+         callbackURL: keys.callbackURL,
+    },
+    function(request, accessToken, refreshToken, profile, done) {
+      User.findOne({ oauthID: profile.id }, function(err, user) {
+        if(err) {
+          console.log(err);  // handle errors!
         }
-    )  
-);
-    // (accessToken, refreshToken, profile, done) => {
-    //     //console.log(profile.id);
-    //     console.log(profile);
-    //     //console.log(googleId);
-    //     console.log("profile fired");
-    // }
-// ));
-
+        if (!err && user !== null) {
+          done(null, user);
+        } else {
+          user = new User({
+            oauthID: profile.id,
+            name: profile.displayName,
+            created: Date.now()
+          });
+          user.save(function(err) {
+            if(err) {
+              console.log(err);  // handle errors!
+            } else {
+              console.log("saving user ...");
+              done(null, user);
+            }
+          });
+        }
+      });
+    }
+  ));
+  passport.use(new GithubStrategy({
+    clientID: keys.clientID,
+    clientSecret: keys.clientSecret,
+    callbackURL: '/auth/github/callback'
+  },
+  function(accessToken, refreshToken, profile, done) {
+    process.nextTick(function () {
+      return done(null, profile);
+    });
+  }
+  ));
 
 // passport.use(new LocalStrategy(
 //     function(username, password, done) {
