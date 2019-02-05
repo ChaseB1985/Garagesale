@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import { Icon } from "@material-ui/core";
 import { IconButton, Button, TextField } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import Payments from "./Payments";
 
 const styles = theme => ({
   open: {
@@ -87,20 +88,17 @@ class NavBar extends Component {
             <div>
               <div className={classes.divFlex}>
                 <IconButton size="small" color="inherit">
-                  <Icon>add</Icon>
+                  <Icon>add</Icon><Payments/>
                 </IconButton>
-                <IconButton size="small" color="inherit">
-                  <Icon>face</Icon>
+                <IconButton size="small" color="inherit" href="/surveys/new">
+                  <Icon >mail</Icon>
                 </IconButton>
                 <IconButton size="small" color="inherit">
                   <Icon>search</Icon>
                 </IconButton>
               </div>
-              <Button color="inherit" component={Link} to="/">
-                <Icon className={classes.leftIcon}>home</Icon>
-                Home
-              </Button>
-              <Button color="inherit" component={Link} to="/surveys/new">
+              
+              <Button color="inherit" component={Link} to="/register">
                 <Icon className={classes.leftIcon}>person</Icon>
                 register
               </Button>
@@ -108,12 +106,18 @@ class NavBar extends Component {
                 <Icon className={classes.leftIcon}>lock_open</Icon>
                 Login
               </Button>
+              <Button color="inherit" href="/auth/google">
+                <Icon className={classes.leftIcon}>lock_open</Icon>
+                Login with Google
+              </Button>
+              <Button color="inherit" href="/auth/github">
+                <Icon className={classes.leftIcon}>lock_open</Icon>
+                Login with Github
+              </Button>
               <TextField
                 className={this.state.isOpen ? classes.open : classes.closed}
               />
-              <IconButton onClick={this.openSearch} color="inherit">
-                <Icon>search</Icon>
-              </IconButton>
+              
             </div>
           </Toolbar>
         </AppBar>

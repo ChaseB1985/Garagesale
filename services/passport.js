@@ -79,8 +79,8 @@ passport.use(new GoogleStrategy({
     }
   ));
   passport.use(new GithubStrategy({
-    clientID: keys.clientID,
-    clientSecret: keys.clientSecret,
+    clientID: keys.githubClientID,
+    clientSecret: keys.githubClientSecret,
     callbackURL: '/auth/github/callback'
   },
   function(accessToken, refreshToken, profile, done) {

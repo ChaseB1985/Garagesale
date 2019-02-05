@@ -190,6 +190,7 @@ import SurveyNew from './surveys/SurveyNew';
 //import Routes from './Routes';
 import NavBar from "./NavBar";
 import LoginForm from './Login/LoginForm';
+import Register from './Register';
 
 class App extends Component {
   componentDidMount() {
@@ -205,7 +206,7 @@ class App extends Component {
             <NavBar />
              <Route exact path="/" component={Landing} />
              <Route exact path="/login" component={LoginForm} />
-             <Route path="/register" component={SurveyNew} />
+             <Route path="/register" component={Register} />
              <Route path="/surveys/new" component={SurveyNew} />
              <Route path="/auth/google" component={Dashboard} />
           </div>

@@ -85,7 +85,7 @@ class Header extends Component {
         return;
       case false:
         return <li><a href="/auth/google">Login with Google</a></li>,
-        <li><a href="/auth/github">Login with Google</a></li>;
+        <li><a href="/auth/github">Login with Github</a></li>;
       default:
         return [
           <li key="1"><Payments /></li>,

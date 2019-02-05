@@ -9,7 +9,8 @@ require('./models/Survey');
 require('./services/passport');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongoURI, () => {
+mongoose.connect(keys.mongoURI,
+    {useNewUrlParser: true}, () => {
     console.log('connected to DB')
 });
 
