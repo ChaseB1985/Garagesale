@@ -178,19 +178,18 @@
 
 // // export default App
 
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-// import React, { Fragment } from "react";
-//import { BrowserRouter } from "react-router-dom";
-import NavBar from "./NavBar";
-import Routes from "./Routes";
+
 import Header from './Header/Header';
 import Landing from './Landing/Landing';
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 //import Routes from './Routes';
+import NavBar from "./NavBar";
+import LoginForm from './Login/LoginForm';
 
 class App extends Component {
   componentDidMount() {
@@ -202,14 +201,13 @@ class App extends Component {
       <div className="container">
         <BrowserRouter>
           <div>
-      <Fragment>
-         <NavBar />
-         <Routes />
-      </Fragment>
             <Header />
+            <NavBar />
              <Route exact path="/" component={Landing} />
-             <Route exact path="/surveys" component={Dashboard} />
+             <Route exact path="/login" component={LoginForm} />
+             <Route path="/register" component={SurveyNew} />
              <Route path="/surveys/new" component={SurveyNew} />
+             <Route path="/auth/google" component={Dashboard} />
           </div>
         </BrowserRouter>
       </div>
@@ -219,20 +217,6 @@ class App extends Component {
 
 export default connect(null, actions)(App);
 
-// import React, { Fragment } from "react";
-// import { BrowserRouter } from "react-router-dom";
-// import NavBar from "./NavBar";
-// import Routes from "./Routes";
 
-// export default () => {
-//   return (
-//     <BrowserRouter>
-//       <Fragment>
-//         <NavBar />
-//         <Routes />
-//       </Fragment>
-//     </BrowserRouter>
-//   );
-// };
 
 

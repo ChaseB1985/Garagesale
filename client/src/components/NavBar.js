@@ -81,7 +81,7 @@ class NavBar extends Component {
                 color="inherit"
                 className={classes.childFlex}
               >
-                News
+                Garage Sale
               </Typography>
             </div>
             <div>
@@ -100,7 +100,7 @@ class NavBar extends Component {
                 <Icon className={classes.leftIcon}>home</Icon>
                 Home
               </Button>
-              <Button color="inherit" component={Link} to="/register">
+              <Button color="inherit" component={Link} to="/surveys/new">
                 <Icon className={classes.leftIcon}>person</Icon>
                 register
               </Button>
