@@ -202,7 +202,7 @@ class App extends Component {
       <div className="container">
         <BrowserRouter>
           <div>
-            <Header />
+            
             <NavBar />
              <Route exact path="/" component={Landing} />
              <Route exact path="/login" component={LoginForm} />

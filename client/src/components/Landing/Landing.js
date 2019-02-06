@@ -1,17 +1,3 @@
-// import React from 'react';
-
-// const Landing = () => {
-//     return (
-//         <div style={{ textAlign: 'center'}}>
-//             <h1>
-//             Garage Sale!
-//             </h1>
-//             Collect feedback from your users
-//         </div>
-//     );
-// };
-
-// export default Landing;
 
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
@@ -176,7 +162,7 @@ class Home extends Component {
         <div
           className={classes.paralax}
           style={{
-            backgroundImage: `url('https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?cs=srgb&dl=light-landscape-nature-326055.jpg&fm=jpg')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1507525475752-ed223abbfff4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')`,
             minHeight: 200
           }}
         >
