@@ -93,9 +93,7 @@ class NavBar extends Component {
                 <IconButton size="small" color="inherit" href="/surveys/new">
                   <Icon >mail</Icon>
                 </IconButton>
-                <IconButton size="small" color="inherit">
-                  <Icon>search</Icon>
-                </IconButton>
+                
               </div>
               
               <Button color="inherit" component={Link} to="/register">

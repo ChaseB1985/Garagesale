@@ -48,7 +48,7 @@ const styles = theme => ({
   },
   Typo: {
     padding: 15,
-    backgroundColor: `darkgreen`
+    backgroundColor: `darkgrey`
   }
 });
 
@@ -110,23 +110,7 @@ class Home extends Component {
                 color="primary"
                 onClick={this.change}
               >
-                button 1
-              </Button>
-            </Grid>
-            <Grid container>
-              <Button
-                className={classes.buttonTwo}
-                variant="contained"
-                style={{ color: "primary" }}
-              >
-                button 2
-              </Button>
-              <Button
-                className={classes.buttonTwo}
-                variant="contained"
-                style={{ color: "primary" }}
-              >
-                button 3
+                Change Picture
               </Button>
             </Grid>
             <Grid container justify="center">
@@ -147,16 +131,13 @@ class Home extends Component {
           </div>
         </div>
         <Grid container justify="center" className={classes.Typo}>
-          <Typography style={{ color: "white" }} variant="title">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+          <Typography style={{ color: "black" }} variant="title">
+            This application makes selling your stuff easier. You can login with 
+            Google or Github, if you do not have one of those accounts you can still 
+            Register and login the old fashioned way. Next click to add some credits,
+            for now you can use credit card 42424242424242 to see how it works. Then click 
+            on the mail icon and fill out the info for what you would like to sell, follow 
+            the steps and the recipient will get you message with what you are trying to sell.
           </Typography>
         </Grid>
         <div
@@ -167,48 +148,15 @@ class Home extends Component {
           }}
         >
           <Typography className={classes.typo} variant="title">
-            THIS IS THE LANDING PAGE OF THIS WEBSITE
+            Make Money Selling Old Stuff
           </Typography>
-          <div>
-            <Grid container justify="center">
-              <Button
-                className={classes.heroButton}
-                variant="contained"
-                fullWidth
-                color="primary"
-              >
-                button 1
-              </Button>
-            </Grid>
-            <Grid container>
-              <Button
-                className={classes.buttonTwo}
-                variant="contained"
-                style={{ color: "primary" }}
-              >
-                button 2
-              </Button>
-              <Button
-                className={classes.buttonTwo}
-                variant="contained"
-                style={{ color: "primary" }}
-              >
-                button 3
-              </Button>
-            </Grid>
-          </div>
+          
         </div>
         <Grid container justify="center" className={classes.Typo}>
-          <Typography style={{ color: "white" }} variant="title">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+          <Typography style={{ color: "black" }} variant="title">
+          I hope you enjoy trying to get rid of some of your old junk.
+          I bet it would be nice being able to get your car in the garage
+          again.         
           </Typography>
         </Grid>
       </Fragment>
