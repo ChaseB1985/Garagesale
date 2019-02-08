@@ -1,5 +1,5 @@
 const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
+//const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const LocalStrategy = require('passport-local').Strategy; 
 const GithubStrategy = require('passport-github2').Strategy;
 //const GoogleStrategy = require('passport-google-oauth2').Strategy;
@@ -20,30 +20,30 @@ passport.deserializeUser((id, done) => {
     });
 });
 
-passport.use(
-    new GoogleStrategy(
-    {
-    clientID: keys.googleClientID, 
-    clientSecret: keys.googleClientSecret,
-    callbackURL: '/auth/google/callback',
-    //callbackURL: 'http://localhost:3000/auth/google/callback',
-    proxy: true,
-    passReqToCallback   : true
-    }, 
-    async (accessToken, refreshToken, profile, done) => {
-        const existingUser = await User.findOne(
-            { googleID: profile.id });
+// passport.use(
+//     new GoogleStrategy(
+//     {
+//     clientID: keys.googleClientID, 
+//     clientSecret: keys.googleClientSecret,
+//     callbackURL: '/auth/google/callback',
+//     //callbackURL: 'http://localhost:3000/auth/google/callback',
+//     proxy: true,
+//     passReqToCallback   : true
+//     }, 
+//     async (accessToken, refreshToken, profile, done) => {
+//         const existingUser = await User.findOne(
+//             { googleID: profile.id });
             
-            //console.log("profile fired");
+//             //console.log("profile fired");
             
-            if (existingUser){
-                return done(null, existingUser);
-            } 
-                const user = await new User({ googleID: profile.id }).save();
-                done(null, user);               
-        }
-    )  
-);
+//             if (existingUser){
+//                 return done(null, existingUser);
+//             } 
+//                 const user = await new User({ googleID: profile.id }).save();
+//                 done(null, user);               
+//         }
+//     )  
+// );
 
 
 //passport.use(new GoogleStrategy({
