@@ -1,6 +1,6 @@
-const passport = require('passport');
+// const passport = require('passport');
 
-module.exports = app => {
+// module.exports = app => {
     
 // app.get('/auth/google', 
 //     passport.authenticate('google', {
@@ -27,28 +27,28 @@ module.exports = app => {
 //     res.redirect('/surveys');
 //   });
 
-app.get('/api/logout', (req, res) => {
-    req.logout(); 
-    res.redirect('/'); 
-    //shows user is logged out
-});
+// app.get('/api/logout', (req, res) => {
+//     req.logout(); 
+//     res.redirect('/'); 
+//     //shows user is logged out
+// });
 
-app.get('/api/current_user', (req, res) => {
-    res.send(req.user);
-    }); 
-
-
+// app.get('/api/current_user', (req, res) => {
+//     res.send(req.user);
+//     }); 
 
 
-    app.get('/auth/github',
-      passport.authenticate('github'),
-      function(req, res){});
-    app.get('/auth/github/callback',
-      passport.authenticate('github', { failureRedirect: '/' }),
-      function(req, res) {
-        res.redirect('/surveys');
-      });
-};
+
+
+//     app.get('/auth/github',
+//       passport.authenticate('github'),
+//       function(req, res){});
+//     app.get('/auth/github/callback',
+//       passport.authenticate('github', { failureRedirect: '/' }),
+//       function(req, res) {
+//         res.redirect('/surveys');
+//       });
+// };
     // app.get('/google/redirect', (req, res) =>{
     //         res.send('you reached the callback uri');
     //     });
