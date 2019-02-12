@@ -12,7 +12,7 @@
     "server": "nodemon index.js --ignore './client'",
     "client": "yarn run start --prefix client",
     "dev": "concurrently \"yarn run server\" \"yarn run client\"",
-    "heroku-postbuild": "yarn install --prefix client && yarn run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Chase Barrier",
   "license": "ISC",
