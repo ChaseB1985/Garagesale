@@ -5,8 +5,4 @@ dev.js
 .env.development
 
 
-/node_modules
 
-/dev.js
-
-/.env.development
