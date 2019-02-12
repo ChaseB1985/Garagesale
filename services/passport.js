@@ -4,7 +4,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const GithubStrategy = require('passport-github2').Strategy;
 const GoogleStrategy = require('passport-google-oauth2').Strategy;
 const mongoose = require('mongoose');
-const keys = require('../config/keys');
+const keys = require('../Config/keys');
 
 const User = mongoose.model('users');
 
