@@ -5,11 +5,11 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
-import Header from './Header/Header';
+import Header from './Header';
 import Landing from './Landing/Landing';
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
-//import Routes from './Routes';
+
 import NavBar from "./NavBar";
 import LoginForm from './Login/LoginForm';
 import Register from './Register';
