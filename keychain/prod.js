@@ -1,11 +1,11 @@
 
 module.exports = {
-    google = {
+    google : {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
 
     },
-    github = {
+    github : {
         clientID: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET
 
