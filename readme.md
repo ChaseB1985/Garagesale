@@ -31,7 +31,7 @@ The app flow is as follows:
 
 **Notes:**
 
-* Styling was kept SUPER minimal for this app. The focus was on functionality!
+* Styling was kept minimal for this app. The focus was on functionality!
 
 * SendGrid's free accounts are only good for 30 days, so this will app not have a preview/demo link available.
 
@@ -40,3 +40,5 @@ The app flow is as follows:
 * Working on adding other passport authentification eg. Github
 
 * Working locally but having issues with Heroku limits
+
+* Working on adding item database for the user
